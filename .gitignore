@@ -1,0 +1,14 @@
+node_modules
+coverage
+dist
+build
+.playwright
+playwright-report
+test-results
+*.log
+.env
+*.sqlite
+uploads
+data
+var/data
+.DS_Store

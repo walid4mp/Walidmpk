@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: warhex
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RENDER
+        value: "true"
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite:///opt/render/project/src/var/data/warhex.sqlite
+      - key: UPLOAD_DIR
+        value: /opt/render/project/src/var/data/uploads
+    disk:
+      name: warhex-data
+      mountPath: /opt/render/project/src/var/data
+      sizeGB: 1

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM"],
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@royal-square/shared/*": ["packages/shared/src/*"],
+      "@royal-square/shared": ["packages/shared/src/index.ts"],
+      "@royal-square/ui/*": ["packages/ui/src/*"],
+      "@royal-square/ui": ["packages/ui/src/index.ts"]
+    },
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "types": ["node", "vitest/globals"]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "warhex",
+  "private": true,
+  "version": "0.1.0",
+  "description": "WARHEX production-ready chess platform monorepo with React, Express, Socket.IO, and SQLite.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.10.0",
+    "npm": ">=10.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @royal-square/server\" \"npm run dev --workspace @royal-square/web\"",
+    "build": "npm run build --workspace @royal-square/shared && npm run build --workspace @royal-square/ui && npm run build --workspace @royal-square/server && npm run build --workspace @royal-square/web",
+    "start": "npm run start --workspace @royal-square/server",
+    "test": "npm run test --workspace @royal-square/shared && npm run test --workspace @royal-square/ui && npm run test --workspace @royal-square/server && npm run test --workspace @royal-square/web",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspace @royal-square/shared && npm run typecheck --workspace @royal-square/ui && npm run typecheck --workspace @royal-square/server && npm run typecheck --workspace @royal-square/web"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.15",
+    "concurrently": "^9.2.0",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
